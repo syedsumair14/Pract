@@ -16,9 +16,7 @@ class Navbar extends React.Component {
     let map = this.props.Data.filter(item =>
       item.name.toLowerCase().includes(this.state.value.toLowerCase())
     );
-    this.setState({ searchResults: map }, () => {
-      console.log("SEARCHED", this.state.searchResults);
-    });
+    this.setState({ searchResults: map });
   };
 
   render() {
@@ -51,7 +49,18 @@ class Navbar extends React.Component {
           </form>
         </div>
         {this.state.searchResults ? this.state.searchResults.map(item => {
-              return <div>{item.name}</div>;
+              return <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>{item.name}</td>
+                <td>{item.age}</td>
+              </tbody>
+            </table>;
             })
           : "null"}
       </div>
