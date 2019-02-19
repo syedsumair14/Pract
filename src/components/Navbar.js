@@ -48,19 +48,22 @@ class Navbar extends React.Component {
             </button>
           </form>
         </div>
-        {this.state.searchResults ? this.state.searchResults.map(item => {
-              return <table class="table table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                </tr>
-              </thead>
-              <tbody>
-                <td>{item.name}</td>
-                <td>{item.age}</td>
-              </tbody>
-            </table>;
+        {this.state.searchResults
+          ? this.state.searchResults.map(item => {
+              return (
+                <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">First</th>
+                      <th scope="col">Last</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <td>{item.name}</td>
+                    <td>{item.age}</td>
+                  </tbody>
+                </table>
+              );
             })
           : "null"}
       </div>
