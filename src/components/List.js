@@ -65,7 +65,7 @@ class List extends React.Component {
           <thead>
             <tr>
               <th scope="col">First</th>
-              <th scope="col">Last</th>
+              <th scope="col">Last N</th>
             </tr>
           </thead>
           <tbody>{mapList()}</tbody>
